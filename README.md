@@ -18,9 +18,10 @@
 
 ### 使用说明
 1. 点击【开始】，程序将逐一登录qq空间，打开页面上所有的推广链接
-2. 由于qq保护机制，第一次登录可能会出现图片验证码，手动完成验证即可
 ![](https://raw.githubusercontent.com/wiki/inmyjs/apqq_space/images/2.png)
 ![](https://raw.githubusercontent.com/wiki/inmyjs/apqq_space/images/3.png)
+2. 由于qq保护机制，第一次登录可能会出现图片验证码，手动完成验证即可
+![](https://raw.githubusercontent.com/wiki/inmyjs/apqq_space/images/4.png)
 
 ### 其他
 1. 本软件未做定时器，后续可加入定时启动任务
