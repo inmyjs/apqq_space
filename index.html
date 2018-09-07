@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>小蜘蛛</title>
+    <link rel="stylesheet" href="./assest/utils/alertify_old/alertify.core.css"/>
+    <link rel="stylesheet" href="./assest/utils/alertify_old/default.css"/>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./assest/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="./assest/vue.2.5.13.js"></script>
+    <script src="./assest/element-ui/lib/index.js"></script>
+    <script src="./assest/utils/jquery-3.2.1.min.js"></script>
+    <script src="./assest/utils/alertify_old/alertify.min.js"></script>
+    <script src="./assest/utils/common.js"></script>
+    <link rel="stylesheet" href="./assest/common.css"/>
+    <script type="application/javascript">
+        var Spider={};
+    </script>
+</head>
+<body style="margin: 0;">
+<div id="app" style="position: absolute;width: 100%;bottom: 0;top:0;">
+<el-container style="height: 100%;">
+    <el-aside style="width: 200px;background-color:#545c64;height: 100%">
+        <el-menu
+                default-active="1"
+                class="el-menu-vertical-demo"
+                @open="handleOpen"
+                @close="handleClose"
+                background-color="#545c64"
+                text-color="#fff"
+                active-text-color="#ffd04b">
+            <el-menu-item index="1">
+                <i class="el-icon-menu"></i>
+                <span slot="title">QQ空间</span>
+            </el-menu-item>
+        </el-menu>
+    </el-aside>
+    <el-container>
+    <el-main class="el-main">
+        <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tab-pane label="多点访问" name="first">
+                <el-row>
+                    <el-col :span="18">
+                        <!--<el-button type="primary" @click="login">{{login_text}}</el-button>-->
+                        <el-button type="success" @click="start" :loading="start_loading">{{start_text}}</el-button>
+                        <el-button type="danger" @click="close" >关闭</el-button>
+                    </el-col>
+                    <el-col :span="6">
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :span="6">
+                        <img style="height: 200px;width: 200px;display: none;" id="login_code" src=""/>
+                    </el-col>
+                </el-row>
+                <iframe id="pay_iframe"  src="" nwfaketop frameborder="0"></iframe>
+               <!-- <el-row id="view_iframe">
+                    <el-col :span="6" v-for="item in view_iframes" :id="item.colID">
+                    <iframe :id="item.viewID" class="show-iframe" :src="item.url" nwfaketop frameborder="0"></iframe>
+                    </el-col>
+                </el-row>-->
+            </el-tab-pane>
+        </el-tabs>
+    </el-main>
+    <el-footer height="250px;">
+        <el-row>
+            <el-col :span="18">
+            <h3>日志：</h3>
+            </el-col>
+            <el-col :span="6" style="text-align: right;">
+            <el-button type="text" @click="clear" >清空</el-button>
+            </el-col>
+        </el-row>
+        <ul id="logout">
+            <li v-for="item in logs">
+                <el-alert :title="item.title" :type="item.type" :closable="false" show-icon>
+                </el-alert>
+            </li>
+        </ul>
+    </el-footer>
+    </el-container>
+</el-container>
+</div>
+<script src="app/task.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

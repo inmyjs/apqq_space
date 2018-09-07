@@ -1,0 +1,16 @@
+ul li{
+    list-style-type:none;
+}
+#logout{
+   height: 200px;
+    overflow: auto;
+}
+#pay_iframe{
+    display: none;
+    height: 400px;
+    width: 100%;
+}
+.show-iframe{
+    height: 200px;
+    width: 100%;
+}
